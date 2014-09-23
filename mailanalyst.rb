@@ -9,5 +9,5 @@ EM.run do
   trap 'INT'  do EM.stop end
   trap 'TERM' do EM.stop end
 
-  MailAnalyst::Smtp.start('127.0.0.1', 25001)
+  MailAnalyst::Smtp.start('0.0.0.0', 25001)
 end
