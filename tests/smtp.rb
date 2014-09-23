@@ -5,9 +5,9 @@ describe MailAnalyst::Smtp do
   it "should receive message" do
     host = "127.0.0.1"
     port = 25000
+    MailAnalyst::Smtp.parms = {verbose: true}
 
     EM.run do
-      p 'starting new server'
       MailAnalyst::Smtp.start(host, port)
       EM::Timer.new(2) {EM.stop}
 
@@ -15,7 +15,7 @@ describe MailAnalyst::Smtp do
 
       EM::P::SmtpClient.send host: host,
         port: port,
-        domain: "bogus",
+        domain: "mailanalyst.local",
         auth: {type: :plain, username: "tid=UA-XXXX-Y&el=test"},
         from: "me@example.com",
         to: "you@example.com",

@@ -5,6 +5,8 @@ require "eventmachine"
 
 require_relative "mailanalyst/smtp"
 
+MailAnalyst::Smtp.parms = {verbose: true}
+
 EM.run do
   trap 'INT'  do EM.stop end
   trap 'TERM' do EM.stop end

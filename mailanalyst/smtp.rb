@@ -38,6 +38,8 @@ module MailAnalyst
     end
 
     def receive_message
+      @@parms[:verbose] and $>.puts "Received complete message"
+
       current.received = true
       current.completed_at = Time.now
 
