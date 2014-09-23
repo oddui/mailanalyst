@@ -9,7 +9,7 @@ describe MailAnalyst::Smtp do
     EM.run do
       p 'starting new server'
       MailAnalyst::Smtp.start(host, port)
-      EM::Timer.new(10) {EM.stop}
+      EM::Timer.new(2) {EM.stop}
 
       assert MailAnalyst::Smtp.running?
 

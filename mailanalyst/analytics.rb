@@ -15,9 +15,9 @@ module MailAnalyst
         cid:"mailanalyst",
         t:  "event",
         ec: "motion",
-        ea: "detected",
+        ea: "detect",
         el: "default"
-      }.merge(parameters)
+      }.merge(parameters||{})
     end
 
     def send
