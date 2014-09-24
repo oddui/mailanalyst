@@ -5,7 +5,7 @@ require "eventmachine"
 
 require_relative "mailanalyst/smtp"
 
-MailAnalyst::Smtp.parms = {verbose: true}
+MailAnalyst::Smtp.parms = {verbose: true, auth: :plain}
 
 EM.run do
   trap 'INT'  do EM.stop end
