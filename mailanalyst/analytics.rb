@@ -21,10 +21,12 @@ module MailAnalyst
     end
 
     def send
-      http = EventMachine::HttpRequest.new(host).post(body: parameters)
-      http.errback { p "host is down! terminate?" }
+      http = EventMachine::HttpRequest.new(host).post({
+        head: {"user-agent" => "MailAnalyst"},
+        body: parameters
+      })
 
-      http
+      http.errback { p "host is down! terminate?" }
     end
 
   end

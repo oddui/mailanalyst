@@ -13,6 +13,7 @@ describe MailAnalyst::Analytics do
         assert http.req.method == "POST"
         assert http.req.host == "www.google-analytics.com"
         assert http.req.port == 80
+        assert http.req.headers.fetch("user-agent") == "MailAnalyst"
         assert http.req.body.fetch(:v) == "1"
         assert http.req.body.fetch(:el) == "A Label"
         assert http.req.body.fetch(:tid) == "UA-XXXX-Y"
