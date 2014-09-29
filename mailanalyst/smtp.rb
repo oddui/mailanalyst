@@ -47,10 +47,10 @@ module MailAnalyst
 
       # analytics
       MailAnalyst::Analytics.new(nil, current.parameters).send
-      
+
       # sendmail
       Pony.mail(to: current.recipients, from: current.sender, subject: "Hello") if false
-      
+
       @current = OpenStruct.new
       true
     end
@@ -82,7 +82,7 @@ module MailAnalyst
       @current ||= OpenStruct.new
     end
 
-    def self.start(host = 'localhost', port = 1025)
+    def self.start(host = 'localhost', port = 25000)
       require 'ostruct'
       @server = EM.start_server host, port, self
     end
