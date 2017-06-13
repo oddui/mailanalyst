@@ -19,7 +19,7 @@ $ docker -t mailanalyst .
 Run
 
 ```
-$ docker run -d mailanalyst
+$ docker run -d -p 25:25 mailanalyst
 ```
 
 ```

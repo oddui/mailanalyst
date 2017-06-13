@@ -33,5 +33,5 @@ EM.run do
   trap 'INT'  do EM.stop end
   trap 'TERM' do EM.stop end
 
-  MailAnalyst::Smtp.start(options.ip || "0.0.0.0", options.port || 2500)
+  MailAnalyst::Smtp.start(options.ip || "0.0.0.0", options.port || 25)
 end

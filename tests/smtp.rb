@@ -4,7 +4,7 @@ require_relative "../mailanalyst/smtp"
 describe MailAnalyst::Smtp do
   it "should receive message" do
     host = "127.0.0.1"
-    port = 2500
+    port = 25
     MailAnalyst::Smtp.parms = {verbose: true}
 
     EM.run do

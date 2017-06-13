@@ -82,7 +82,7 @@ module MailAnalyst
       @current ||= OpenStruct.new
     end
 
-    def self.start(host = 'localhost', port = 2500)
+    def self.start(host = 'localhost', port = 25)
       require 'ostruct'
       @server = EM.start_server host, port, self
     end
